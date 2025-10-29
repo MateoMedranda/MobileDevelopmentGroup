@@ -1,5 +1,7 @@
 import 'package:atomic_design_lab2/View/billView.dart';
 import 'package:atomic_design_lab2/View/billResultView.dart';
+import 'package:atomic_design_lab2/View/schoolResultView.dart';
+import 'package:atomic_design_lab2/View/schoolView.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,8 +16,9 @@ class MyApp extends StatelessWidget {
       title: 'Sueldo Calcular',
       initialRoute: "/",
       routes: {
-        '/': (context)=>BillView(),
+        '/': (context)=>SchoolView(),
         '/resultado': (context)=>ResultadoView(),
+        '/promediosEscuela': (context)=>SchoolResultView(),
       },
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green)

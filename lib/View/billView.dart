@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../Controller/billController.dart';
-import '../Widget/calculate_button.dart';
-import '../Widget/input_venta.dart';
+import '../Widget/action_button.dart';
+import '../Widget/app_input.dart';
 
 class BillView extends StatefulWidget{
   @override
@@ -65,7 +65,7 @@ class _BillViewState extends State<BillView> {
             SizedBox(height: 10),
             InputVenta(controller: venta3Crtl, label: "Producto 3"),
             SizedBox(height: 30),
-            CalculateButton(onPressed: _calculate),
+            CalculateButton(onPressed: _calculate, setIcon: Icon(Icons.calculate),text: 'Calcular sueldo', color: Colors.redAccent,),
           ],
         ),
       ),
