@@ -3,10 +3,9 @@ import '../Controller/billController.dart';
 import '../Widget/action_button.dart';
 import '../Widget/app_input.dart';
 
-class BillView extends StatefulWidget{
+class BillView extends StatefulWidget {
   @override
   State<BillView> createState() => _BillViewState();
-
 }
 
 class _BillViewState extends State<BillView> {
@@ -16,7 +15,7 @@ class _BillViewState extends State<BillView> {
   final venta3Crtl = TextEditingController();
 
   //resultado
-  void _calculate(){
+  void _calculate() {
     controller.setSales(venta1Crtl.text, venta2Crtl.text, venta3Crtl.text);
     final salary = controller.calculateSalary();
     final iva = controller.calculateIVA();
@@ -37,7 +36,7 @@ class _BillViewState extends State<BillView> {
         'sale1': salesStrings[0],
         'sale2': salesStrings[1],
         'sale3': salesStrings[2],
-      }
+      },
     );
   }
 
@@ -46,8 +45,12 @@ class _BillViewState extends State<BillView> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Sueldo y Datos de Facturación'),
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.orange[600],
         foregroundColor: Colors.white,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.pushReplacementNamed(context, '/'),
+        ),
       ),
 
       body: SingleChildScrollView(
@@ -65,14 +68,15 @@ class _BillViewState extends State<BillView> {
             SizedBox(height: 10),
             InputVenta(controller: venta3Crtl, label: "Producto 3"),
             SizedBox(height: 30),
-            CalculateButton(onPressed: _calculate, setIcon: Icon(Icons.calculate),text: 'Calcular sueldo', color: Colors.redAccent,),
+            CalculateButton(
+              onPressed: _calculate,
+              setIcon: Icon(Icons.calculate),
+              text: 'Calcular sueldo',
+              color: Colors.redAccent,
+            ),
           ],
         ),
       ),
-
     );
   }
-
-
 }
-
