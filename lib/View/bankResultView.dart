@@ -1,5 +1,5 @@
-import 'package:atomic_design_lab2/Model/bankModel.dart';
-import 'package:atomic_design_lab2/Widget/action_button.dart';
+import '../Model/bankModel.dart';
+import '../Widget/action_button.dart';
 import 'package:flutter/material.dart';
 
 class BankResultView extends StatelessWidget {

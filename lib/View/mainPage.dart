@@ -79,8 +79,8 @@ class MainPage extends StatelessWidget {
         'subtitle': 'Control de ventas',
         'icon': Icons.point_of_sale,
         'color': Colors.purple[600]!,
-        'route': null,
-        'enabled': false,
+        'route': '/caja',
+        'enabled': true,
       },
       {
         'number': '05',
@@ -88,8 +88,8 @@ class MainPage extends StatelessWidget {
         'subtitle': 'Análisis de ventas',
         'icon': Icons.analytics,
         'color': Colors.red[600]!,
-        'route': null,
-        'enabled': false,
+        'route': '/ventas',
+        'enabled': true,
       },
     ];
 

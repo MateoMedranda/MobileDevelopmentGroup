@@ -47,7 +47,7 @@ class _CajaPageState extends State<CajaPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Ejercicio 4.12 - Caja Registradora"),
+        title: const Text("Ejercicio 4 - Caja Registradora"),
         backgroundColor: Colors.teal,
       ),
       backgroundColor: Colors.grey[100],
@@ -57,11 +57,11 @@ class _CajaPageState extends State<CajaPage> {
           children: [
             InputVenta(controller: _billetesController, label: "Número de billetes"),
             const SizedBox(height: 10),
-            InputVenta(controller: _valorBilleteController, label: "Valor de cada billete"),
+            InputVenta(controller: _valorBilleteController, label: "Valor del billete"),
             const SizedBox(height: 10),
             InputVenta(controller: _monedasController, label: "Número de monedas"),
             const SizedBox(height: 10),
-            InputVenta(controller: _valorMonedaController, label: "Valor de cada moneda"),
+            InputVenta(controller: _valorMonedaController, label: "Valor de la moneda"),
             const SizedBox(height: 20),
             CalculateButton(
               onPressed: calcularTotal,

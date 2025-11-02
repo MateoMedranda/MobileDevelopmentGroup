@@ -1,6 +1,6 @@
-import 'package:atomic_design_lab2/Controller/bankController.dart';
-import 'package:atomic_design_lab2/Widget/action_button.dart';
-import 'package:atomic_design_lab2/Widget/app_input.dart';
+import '../Controller/bankController.dart';
+import '../Widget/action_button.dart';
+import '../Widget/app_input.dart';
 import 'package:flutter/material.dart';
 
 class BankView extends StatefulWidget {

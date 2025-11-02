@@ -1,10 +1,12 @@
-import 'package:atomic_design_lab2/View/mainPage.dart';
-import 'package:atomic_design_lab2/View/billView.dart';
-import 'package:atomic_design_lab2/View/billResultView.dart';
-import 'package:atomic_design_lab2/View/schoolResultView.dart';
-import 'package:atomic_design_lab2/View/schoolView.dart';
-import 'package:atomic_design_lab2/View/bankView.dart';
-import 'package:atomic_design_lab2/View/bankResultView.dart';
+import '../View/mainPage.dart';
+import '../View/billView.dart';
+import '../View/billResultView.dart';
+import '../View/schoolResultView.dart';
+import '../View/schoolView.dart';
+import '../View/bankView.dart';
+import '../View/bankResultView.dart';
+import '../View/cajaPage.dart';
+import '../View/ventasPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,6 +28,8 @@ class MyApp extends StatelessWidget {
         '/bankResult': (context) => BankResultView(),
         '/resultado': (context) => ResultadoView(),
         '/promediosEscuela': (context) => SchoolResultView(),
+        '/caja': (context) => CajaPage(),
+        '/ventas': (context) => VentasPage(),
       },
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),

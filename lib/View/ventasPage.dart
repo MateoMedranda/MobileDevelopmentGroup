@@ -60,7 +60,7 @@ class _VentasPageState extends State<VentasPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Ejercicio 4.13 - Ventas"),
+        title: const Text("Ejercicio 5 - Ventas"),
         backgroundColor: Colors.indigo,
       ),
       backgroundColor: Colors.grey[100],
