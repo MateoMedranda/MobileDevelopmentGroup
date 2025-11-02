@@ -6,7 +6,6 @@ import '../Widget/app_input.dart';
 class BillView extends StatefulWidget{
   @override
   State<BillView> createState() => _BillViewState();
-
 }
 
 class _BillViewState extends State<BillView> {
@@ -69,10 +68,7 @@ class _BillViewState extends State<BillView> {
           ],
         ),
       ),
-
     );
   }
-
-
 }
 

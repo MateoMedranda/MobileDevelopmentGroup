@@ -4,7 +4,6 @@ class SchoolResultView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final result = ModalRoute.of(context)!.settings.arguments as String;
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Promedio de edades', style: TextStyle(fontWeight: FontWeight.bold),),
@@ -30,10 +29,7 @@ class SchoolResultView extends StatelessWidget {
                 ),
               ),
             ),
-
             SizedBox(height: 20),
-
-            // Botón de volver
             ElevatedButton.icon(
               onPressed: () => Navigator.pop(context),
               icon: Icon(Icons.arrow_back),
@@ -52,5 +48,4 @@ class SchoolResultView extends StatelessWidget {
       ),
     );
   }
-
 }

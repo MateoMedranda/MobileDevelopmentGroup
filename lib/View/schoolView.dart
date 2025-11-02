@@ -23,7 +23,6 @@ class _SchoolViewState extends State<SchoolView> {
 
   void _calculate(){
     final result = controller.calculateAverages();
-
     Navigator.pushNamed(
         context,
         '/promediosEscuela',
@@ -39,12 +38,10 @@ class _SchoolViewState extends State<SchoolView> {
         backgroundColor: Colors.blueAccent,
         foregroundColor: Colors.white,
       ),
-
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16),
         child: Column(
           children: [
-
             Text(
               'Ingresa las edades de los estudiantes del curso separando por coma (Ex: 10,11,12,9,12)',
               textAlign: TextAlign.left,
@@ -60,9 +57,6 @@ class _SchoolViewState extends State<SchoolView> {
           ],
         ),
       ),
-
     );
   }
-
-
 }

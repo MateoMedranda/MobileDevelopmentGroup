@@ -8,13 +8,10 @@ class BillModel {
 
   double calculateSalary(){
     double baseSalary = 365;
-
     for(int i = 0; i<3; i++){
       totalSales += sales[i];
     }
-
     double comission = totalSales * 0.12;
-
     return baseSalary + comission;
   }
 
@@ -27,10 +24,10 @@ class BillModel {
     return totalSales;
   }
 
-  int calculateDiscount(){
+  double calculateDiscount(){
     if(totalSales > 2000){
       discount = totalSales * 0.20;
-      return 20;
+      return discount;
     }else{
       discount = 0;
       return 0;
@@ -44,5 +41,4 @@ class BillModel {
   List<double> getSales(){
     return sales;
   }
-
 }

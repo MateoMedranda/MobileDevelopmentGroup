@@ -19,11 +19,9 @@ class SchoolController {
     _school = SchoolModel(courses);
     final List<double> coursesAverages = _school!.calculateCoursesAverage();
     final double schoolAverage = _school!.calculateSchoolAverage();
-
     for(int i = 0; i<coursesAverages.length;i++){
       result += "curso ${i+1}: ${coursesAverages[i].toStringAsFixed(2)} años \n";
     }
-
     result += "\n\nPromedio de edad del colegio: ${schoolAverage.toStringAsFixed(2)} años";
     return result;
   }
@@ -35,5 +33,4 @@ class SchoolController {
     }
     return result;
   }
-
 }
