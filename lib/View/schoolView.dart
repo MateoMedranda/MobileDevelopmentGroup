@@ -39,7 +39,6 @@ class _SchoolViewState extends State<SchoolView> {
           onPressed: () => Navigator.pushReplacementNamed(context, '/'),
         ),
       ),
-
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16),
         child: Column(

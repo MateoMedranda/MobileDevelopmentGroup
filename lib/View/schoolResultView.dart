@@ -4,7 +4,6 @@ class SchoolResultView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final result = ModalRoute.of(context)!.settings.arguments as String;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -29,7 +28,6 @@ class SchoolResultView extends StatelessWidget {
                 child: Column(children: [Text(result)]),
               ),
             ),
-
             SizedBox(height: 20),
 
             // Botones de navegación

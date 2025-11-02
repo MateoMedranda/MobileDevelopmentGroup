@@ -14,7 +14,6 @@ class SchoolModel {
       averages.add(sum/course.length);
     }
     coursesAverages = averages;
-
     return averages;
   }
 
@@ -27,5 +26,4 @@ class SchoolModel {
     }
     return averageNum/averageDen;
   }
-
 }
