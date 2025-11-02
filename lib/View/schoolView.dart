@@ -3,7 +3,7 @@ import '../Controller/schoolController.dart';
 import '../Widget/action_button.dart';
 import '../Widget/app_input.dart';
 
-class SchoolView extends StatefulWidget{
+class SchoolView extends StatefulWidget {
   @override
   State<SchoolView> createState() => _SchoolViewState();
 }
@@ -14,20 +14,17 @@ class _SchoolViewState extends State<SchoolView> {
 
   String courses = "";
 
-  void _addCourse(){
+  void _addCourse() {
     controller.setCourse(agesCrtl.text);
     setState(() {
       courses = controller.getCourses();
     });
   }
 
-  void _calculate(){
+  void _calculate() {
     final result = controller.calculateAverages();
-    Navigator.pushNamed(
-        context,
-        '/promediosEscuela',
-        arguments: result
-    );
+
+    Navigator.pushNamed(context, '/promediosEscuela', arguments: result);
   }
 
   @override
@@ -35,8 +32,12 @@ class _SchoolViewState extends State<SchoolView> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Promedio de edad por curso y del colegio'),
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.green[600],
         foregroundColor: Colors.white,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.pushReplacementNamed(context, '/'),
+        ),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16),
@@ -49,9 +50,19 @@ class _SchoolViewState extends State<SchoolView> {
             SizedBox(height: 30),
             InputVenta(controller: agesCrtl, label: "Edades"),
             SizedBox(height: 30),
-            CalculateButton(onPressed: _addCourse, setIcon: Icon(Icons.add), text: 'Agregar Curso', color: Colors.blueAccent,),
+            CalculateButton(
+              onPressed: _addCourse,
+              setIcon: Icon(Icons.add),
+              text: 'Agregar Curso',
+              color: Colors.blueAccent,
+            ),
             SizedBox(height: 30),
-            CalculateButton(onPressed: _calculate, setIcon: Icon(Icons.calculate), text: 'Calcular Promedios', color: Colors.redAccent,),
+            CalculateButton(
+              onPressed: _calculate,
+              setIcon: Icon(Icons.calculate),
+              text: 'Calcular Promedios',
+              color: Colors.redAccent,
+            ),
             SizedBox(height: 30),
             Text(courses, textAlign: TextAlign.left),
           ],

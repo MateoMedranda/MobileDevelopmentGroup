@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class ResultadoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)!.settings.arguments as Map<String, String>;
+    final args =
+        ModalRoute.of(context)!.settings.arguments as Map<String, String>;
     final salary = args['salary']!;
     final iva = args['iva']!;
     final discount = args['discount']!;
@@ -15,8 +16,8 @@ class ResultadoView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Factura', style: TextStyle(fontWeight: FontWeight.bold),),
-        backgroundColor: Colors.indigo,
+        title: Text('Factura', style: TextStyle(fontWeight: FontWeight.bold)),
+        backgroundColor: Colors.orange[600],
         foregroundColor: Colors.white,
         centerTitle: true,
       ),
@@ -37,10 +38,7 @@ class ResultadoView extends StatelessWidget {
                 children: [
                   Text(
                     'Factura',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 8),
                   Text('Fecha: ${DateTime.now().toString().split(' ')[0]}'),
@@ -77,19 +75,53 @@ class ResultadoView extends StatelessWidget {
 
             SizedBox(height: 20),
 
-            // Botón de volver
-            ElevatedButton.icon(
-              onPressed: () => Navigator.pop(context),
-              icon: Icon(Icons.arrow_back),
-              label: Text('Volver'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.greenAccent,
-                padding: EdgeInsets.symmetric(vertical: 16),
-                textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+            // Botones de navegación
+            Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton.icon(
+                    onPressed: () => Navigator.pop(context),
+                    icon: Icon(Icons.arrow_back),
+                    label: Text('Volver'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange[600],
+                      foregroundColor: Colors.white,
+                      padding: EdgeInsets.symmetric(vertical: 16),
+                      textStyle: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+                SizedBox(width: 16),
+                Expanded(
+                  child: ElevatedButton.icon(
+                    onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      '/',
+                      (route) => false,
+                    ),
+                    icon: Icon(Icons.home),
+                    label: Text('Menú'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.indigo[600],
+                      foregroundColor: Colors.white,
+                      padding: EdgeInsets.symmetric(vertical: 16),
+                      textStyle: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
